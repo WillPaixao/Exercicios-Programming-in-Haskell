@@ -15,4 +15,4 @@ Além disso, apesar de praticamente todas as respostas terem sido validadas empi
 garantia absoluta de que todas estejam perfeitamente corretas. Sendo assim, encare as soluções daqui
 com senso crítico, como objeto para comparação com soluções pensadas por conta própria. Acredito que
 o conteúdo deste repositório é melhor aproveitado dessa maneira. Caso encontre qualquer problema ou
-tenha alguma sugestão, sinta-se à vontade para abrir uma _issue_ ou [entrar em contato comigo](mailto:williamvqp@ufrj.br).
+tenha alguma sugestão, sinta-se à vontade para abrir uma _issue_ ou [entrar em contato comigo](mailto:williamvqp@ic.ufrj.br).
