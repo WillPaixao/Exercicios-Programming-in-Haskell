@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 A lista formada pela _list comprehension_ `[f x | x <- xs, p x]`, pode ser interpretada pelo seu gerador e guarda, além da expressão que descreve seus elementos. O gerador `x <- xs` indica que cada elemento `x` de uma lista originária `xs` é tomado. Em cima desse elemento `x`, é aplicada uma guarda `p x`, que verifica se a propriedade descrita pelo predicado `p` é satisfeita por `x`. Isso, em termos de funções de alta ordem, equivale a uma filtragem de `xs` sob a função de teste `p`. Por fim, os valores de `x` que satisfizerem `p` serão transformados por `f`, através da aplicação `f x`, e comporão a lista resultante. A aplicação de `f` a cada um dos elementos devidamente filtrados corresponde a um `map`eamento. Destarte, temos a seguinte igualdade:
 
@@ -6,7 +6,7 @@ A lista formada pela _list comprehension_ `[f x | x <- xs, p x]`, pode ser inter
 [f x | x <- xs, p x] = map f (filter p xs)
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 As seguintes funções de alta ordem do _Prelude_ padrão podem ser definidas como:
 
@@ -32,7 +32,7 @@ dropWhile p (x:xs) | p x       = dropWhile p xs
                    | otherwise = x:xs
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Redefinindo `map` e `filter` usando `foldr`:
 
@@ -47,7 +47,7 @@ filter p = foldr condCons []
 	              | otherwise = xs
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 A função `dec2int`, que transforma uma lista de dígitos decimais em um inteiro, pode ser escrita, utilizando `foldl`, assim:
 
@@ -56,7 +56,7 @@ dec2int :: [Int] -> Int
 dec2int = foldl (\n d -> 10*n + d) 0
 ```
 
-###### Exercício 5:
+# Exercício 5:
 
 As funções `curry` e `uncurry`, que tratam da conversão de versões de funções que recebem pares para sua _curried_, e vice-versa, podem ser definidas como:
 
@@ -68,7 +68,7 @@ uncurry :: (a -> b -> c) -> ((a,b) -> c)
 uncurry f = \(x,y) -> f x y
 ```
 
-###### Exercício 6:
+# Exercício 6:
 
 É dada uma função `unfold`, que recebe um critério de parada `p`, uma transformação `h`, uma função de redução `t`, e um valor inicial `x`, e retorna uma lista formada por concatenações sucessivas do valor transformado `h x`, seguidas da redução `t x`, enquanto o critério de parada não for atendido. Sua definição é:
 
@@ -91,7 +91,7 @@ iterate :: (a -> a) -> a -> [a]
 iterate f = unfold (const False) id f
 ```
 
-###### Exercício 7:
+# Exercício 7:
 
 Para implementar a verificação de erros de transmissão nos bits da mensagem, definimos três funções auxiliares: 
 
@@ -132,11 +132,11 @@ getCheckBit bits = bin2int bits `mod` 2
 
 Todo o resto permanece intacto e funcional.
 
-###### Exercício 8:
+# Exercício 8:
 
 Ao simular um canal de comunicação ruidoso, definindo `channel = tail`, a função de decodificação conseguiu detectar, corretamente, o erro na mensagem. O serviço de verificação foi provido pela função `dropCheckBit`, que é mapeada no fluxo de representações de 9 bits recebido do outro lado do canal. Quando o primeiro bit do fluxo é perdido, é bem provável que a paridade do bit de checagem não seja obedecida em alguma das sequências, provocando o lançamento da exceção.
 
-###### Exercício 9:
+# Exercício 9:
 
 A função `altMap`, que mapeia duas funções aos elementos de uma lista alternadamente, pode ser dada por:
 
@@ -150,7 +150,7 @@ altMap f g = applyF
 	applyG (x:xs) = g x : applyF xs
 ```
 
-###### Exercício 10:
+# Exercício 10:
 
 O algoritmo de Luhn, para validação de números de cartão de crédito, pode ser implementado com `altMap`:
 

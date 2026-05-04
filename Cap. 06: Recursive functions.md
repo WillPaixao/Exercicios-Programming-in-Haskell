@@ -1,8 +1,8 @@
-##### Exercício 1:
+# Exercício 1:
 
 A versão fornecida de `fac` desconsidera o tratamento de entradas negativas tendo em vista que não há algum teste para tal. Um inteiro negativo se enquadraria, dessa maneira, no caso recursivo `fac n = n * fac (n-1)`, que chama recursivamente o fatorial com uma unidade a menos. Como a entrada negativa, quando decrementada de 1, torna-se menor ainda, e os inteiros negativos são, em teoria, infinitos, então `fac` seria expandido indefinidamente.
 
-##### Exercício 2:
+# Exercício 2:
 
 Poderíamos definir `sumdown`, que recebe um inteiro não-negativo `n` como entrada e retorna o somatório $\sum_{i=0}^{n}i$ da seguinte maneira:
 
@@ -12,7 +12,7 @@ sumdown 0 = 0
 sumdown n = n + sumdown (n-1)
 ```
 
-##### Exercício 3:
+# Exercício 3:
 
 A implementação da exponenciação (para inteiros não-negativos) pode ser dada recursivamente da seguinte forma:
 
@@ -98,7 +98,7 @@ Veja que, em apenas 10 passos de derivação (contando apenas expansões de `^`)
 
 Considerando o segundo algoritmo, no seu melhor caso todos os expoentes são divididos por 2 em sequência, sem necessidade de subtração por 1. Nesse caso, o número de passos de redução seria $\log_2(n) + 1$, sendo $n$ o valor inicial do expoente. No pior caso, será necessário subtrair por 1 toda vez que houver uma divisão do expoente, fazendo com que as aproximadas $\log_2(n)$ divisões sejam acompanhadas, cada uma, de um decremento. Assim seriam feitos na ordem de $2 \log_2(n) + 1$ passos no cálculo. Logo, podemos afirmar que a complexidade do algoritmo square-multiply, em seu caso médio, é $O(\log_2(n))$, frente aos $O(n)$ da abordagem inicial.
 
-##### Exercício 4:
+# Exercício 4:
 
 Da maneira enunciada, a função `euclid` poderia ser escrita como:
 
@@ -117,7 +117,7 @@ euclid a 0 = a
 euclid a b = euclid b (a `rem` b)
 ```
 
-##### Exercício 5:
+# Exercício 5:
 
 Levando em conta as definições dadas no capítulo:
 
@@ -175,7 +175,7 @@ As expressões do enunciado são avaliadas desse jeito:
   [1,2]
 ```
 
-##### Exercício 6:
+# Exercício 6:
 
 Definindo as funções listadas de maneira recursiva:
 
@@ -209,7 +209,7 @@ elem x (x':xs) | x == x'   = True
                | otherwise = elem x xs
 ```
 
-##### Exercício 7:
+# Exercício 7:
 
 A função `merge`, que recebe duas listas ordenadas e as mescla de maneira ordenada, pode ser dada recursivamente por:
 
@@ -221,7 +221,7 @@ merge (x:xs) (y:ys) | x < y     = x : merge xs (y:ys)
                     | otherwise = y : merge (x:xs) ys
 ```
 
-##### Exercício 8:
+# Exercício 8:
 
 O algoritmo **Merge Sort** pode ser implementado, usando a função `merge` anterior, dessa maneira:
 
@@ -234,9 +234,9 @@ msort xs  = merge (msort ls) (msort rs)
     (ls,rs) = splitAt (length xs `div` 2) xs
 ```
 
-##### Exercício 9:
+# Exercício 9:
 
-###### `sum`: Calcula o somatório de uma lista de números
+## `sum`: Calcula o somatório de uma lista de números
 
 1. **Definir o tipo**: Começamos definindo no domínio das listas de inteiros. A função deve receber uma lista, contendo os inteiros, e retornar seu somatório, que deve ser um número inteiro.
 
@@ -275,7 +275,7 @@ sum :: Num a => [a] -> a
 sum = foldr (+) 0
 ```
 
-###### `take`: Pega os `n` primeiros elementos de uma lista
+## `take`: Pega os `n` primeiros elementos de uma lista
 
 1. **Definir o tipo**: Nosso objetivo é coletar uma certa quantidade, inteira não-negativa, de elementos de uma lista qualquer. Logo, a restrição de tipo fica somente no argumento do número de elementos a serem extraídos.
 
@@ -319,7 +319,7 @@ take _ []     = []
 take n (x:xs) = x : take (n-1) xs
 ```
 
-###### `last`: Acessa o último elemento de uma lista
+## `last`: Acessa o último elemento de uma lista
 
 1. **Definir o tipo**: O tipo da lista não importa, assim como o de seu último elemento. Assim, `last` deve receber uma lista de elementos de um tipo qualquer e retornar um elemento daquele tipo.
 

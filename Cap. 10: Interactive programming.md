@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 A ação `putStr cs`, que imprime a string `cs` na saída padrão, pode ser descrita em função de `putChar` e `sequence_`:
 
@@ -7,7 +7,7 @@ putStr :: String -> IO ()
 putStr cs = sequence_ [putChar c | c <- cs]
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 A ação `putBoard b`, para exibição de um tabuleiro de Nim dado por uma lista contendo as quantidades de estrelas em cada linha, pode ser definida recursivamente, para tabuleiros de qualquer tamanho:
 
@@ -21,7 +21,7 @@ putBoard = loop 1
 	  loop (i+1) rs
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 A generalização de `putBoard` pode ser escrita de maneira mais enxuta através da função `sequence_`:
 
@@ -30,7 +30,7 @@ putBoard :: Board -> IO ()
 putBoard b = sequence_ [putRow i r | (i,r) <- zip [1..] b]
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 Podemos desenhar a ação `adder`, que corresponde a um programa que lê uma certa quantidade de números da entrada padrão e apresenta seu somatório ao final, da seguinte forma:
 
@@ -62,7 +62,7 @@ adder = do
 
 Vale ressaltar que existem alguns pontos passíveis de falha, em especial no que diz respeito à validação do tipo dos dados de entrada em `getInt`. Poderíamos ter incorporado essa defesa na ação, solicitando o usuário repetidas vezes até que a condição da entrada ser `Int`eira fosse obedecida. Porém, não há tanto motivo de preocupação, já que a função `read`, usada para converter a string do usuário em um dado do tipo `Int`, faz o papel de lançar uma exceção no caso de formato inválido, prevenindo comportamentos imprevisíveis.
 
-###### Exercício 5:
+# Exercício 5:
 
 Valendo-se da função `sequence`, que combina uma sequência de ações do tipo `[IO a]` em uma única ação do tipo `IO [a]`, a ação `adder` fica muito mais enxuta, sem nem precisarmos da definição auxiliar `accum`, do **Exercício 4**:
 
@@ -76,7 +76,7 @@ adder = do
   putStrLn (show (sum vals))
 ```
 
-###### Exercício 6:
+# Exercício 6:
 
 A ação `readLine`, que implementa `getLine` com a funcionalidade adicional de permitir que a tecla de _Backspace_ seja utilizada para apagar caracteres digitados, pode ser escrita assim:
 

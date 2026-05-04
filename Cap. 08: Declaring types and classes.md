@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 Seguindo a mesma lógica da soma recursiva em números `Nat`urais, a função `mult` pode ser escrita assim:
 
@@ -8,7 +8,7 @@ mult Zero     _ = Zero
 mult (Succ m) n = add n (mult m n)
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 A operação `compare` é conveniente no sentido de que demanda, possivelmente, apenas uma comparação entre seus dois operandos para determinação de sua ordenação relativa. Isso dispensa a necessidade de duas chamadas comparativas explícitas de igualdade `==` e menoridade `<`, potencialmente economizando alguns passos de execução. 
 
@@ -26,7 +26,7 @@ occurs x (Node l y r) =
 	GT -> occurs x r
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Para detectar o balanceamento de árvores cujos valores atômicos encontram-se apenas em suas folhas, é de grande valia a definição de uma função auxiliar que calcula o número de folhas em uma árvore desse tipo:
 
@@ -45,7 +45,7 @@ balanced (Node l r) =
   (abs (countLeaves l - countLeaves r)) <= 1
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 Uma função que, dada uma lista não vazia de itens, gera uma árvore balanceada contendo-os, pode ser dada por:
 
@@ -58,7 +58,7 @@ balance xs  = Node (balance l) (balance r)
     (l,r) = splitAt (length xs `div` 2) xs
 ```
 
-###### Exercício 5:
+# Exercício 5:
 
 Vamos assumir um tipo de dado recursivo `Expr` que corresponde a expressões de dois tipos: uma aplicação de operação unária a um inteiro `UN Int`; e uma aplicação de operação binária a duas subexpressões `BIN Expr Expr`. Os nomes foram alterados, com relação aos apontados no enunciado, para levar em conta a generalização dos significados de `Val` e `Add`.
 
@@ -91,7 +91,7 @@ Para além do seu significado recursivo, `folde u b` pode ser entendida pela mud
   b (u x) (b (u y) (u z))
 ```
 
-###### Exercício 6:
+# Exercício 6:
 
 Note que podemos interpretar as operações descritas por `UN` e `BIN` como quisermos, em particular na forma de operações de identidade e soma de inteiros, respectivamente. Logo, temos um mecanismo para avaliação de expressões no contexto original, de expressões compostas de somas de expressões com valores inteiros:
 
@@ -114,7 +114,7 @@ size :: Expr -> Int
 size = folde (const 1) (+)
 ```
 
-###### Exercício 7:
+# Exercício 7:
 
 As declarações de instâncias da classe `Eq` devem, no mínimo, delimitar um método para checagem de igualdade entre dois elementos daquele tipo. Nesse sentido, as instanciações dos tipos `Maybe a` e `[a]` como `Eq`uiparáveis podem ser feitas assim:
 
@@ -131,7 +131,7 @@ instance Eq a => Eq [a] where
   (x:xs) == (y:ys) = (x == y) && (xs == ys)
 ```
 
-###### Exercício 8:
+# Exercício 8:
 
 Para incorporar as operações de disjunção e equivalência lógicas em nosso sistema simbólico, é suficiente que definamos três características de cada uma das expressões correspondentes:
 
@@ -163,7 +163,7 @@ vars (Or p q)    = vars p ++ vars q
 vars (Iff p q)   = vars p ++ vars q
 ```
 
-###### Exercício 9:
+# Exercício 9:
 
 A máquina abstrata, apresentada na seção 8.7, é limitada à avaliação de expressões aritméticas compostas de valores inteiros e adições. O coração do sistema reside em três definições: a das operações feitas pela máquina, enumeradas no tipo de dado `Op`; a descrição da avaliação de cada tipo de expressão, nos casos cobertos pelas equações de `eval`; e a descrição da execução da máquina sobre cada operação retirada da pilha de controle, em `exec`.
 

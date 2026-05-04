@@ -1,8 +1,8 @@
-###### Exercício 1:
+# Exercício 1:
 
 Podemos descrever o somatório $\sum_{x = 1}^{100} x^2$ de forma enxuta em Haskell pela expressão `sum [x^2 | x <- [1..100]]`.
 
-###### Exercício 2:
+# Exercício 2:
 
 A função `grid`, que dadas dimensões `m` e `n` retorna a grade coordenada correspondente, pode ser implementada como:
 
@@ -11,7 +11,7 @@ grid :: Int -> Int -> [(Int,Int)]
 grid m n = [(x,y) | x <- [0..m], y <- [0..n]]
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Podemos escrever a função `square`, que retorna uma grade coordenada quadrada com uma certa dimensão excluindo a diagonal principal, como:
 
@@ -20,7 +20,7 @@ square :: Int -> [(Int,Int)]
 square n = [(x,y) | (x,y) <- grid n n, x /= y]
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 `replicate`, função do Prelude que cria uma lista com uma certa quantidade de repetições de um elemento, pode ser definida usano _list comprehension_:
 
@@ -29,7 +29,7 @@ replicate :: Int -> a -> [a]
 replicate n x = [x | _ <- [1..n]]
 ```
 
-###### Exercício 5:
+# Exercício 5:
 
 A função `pyths`, que gera uma lista de triplas pitagóricas com elementos menores ou iguais a um certo valor, pode ser descrita como:
 
@@ -42,7 +42,7 @@ pyths n =
 			 x^2 + y^2 == z^2]
 ```
 
-###### Exercício 6:
+# Exercício 6:
 
 A função `perfects`, que retorna uma lista dos números perfeitos menores ou iguais a um valor, pode ser implementada assim:
 
@@ -54,7 +54,7 @@ perfects n =
     perfect x = (sum (factors x)) == 2*x
 ```
 
-###### Exercício 7:
+# Exercício 7:
 
 A expressão
 
@@ -68,7 +68,7 @@ A expressão
 concat [[(x,y) | y <- [3,4]] | x <- [1,2]]
 ```
 
-###### Exercício 8:
+# Exercício 8:
 
 A função `positions` pode ser redefinida usando `find` dessa maneira:
 
@@ -77,7 +77,7 @@ positions :: Eq a => a -> [a] -> [Int]
 positions x xs = find x (zip xs [0..])
 ```
 
-###### Exercício 9:
+# Exercício 9:
 
 Definindo a função `scalarproduct`, que calcula o produto escalar entre duas listas de inteiros:
 
@@ -86,7 +86,7 @@ scalarproduct :: [Int] -> [Int] -> Int
 scalarproduct xs ys = sum [x*y | (x,y) <- zip xs ys]
 ```
 
-###### Exercício 10:
+# Exercício 10:
 
 As únicas alterações necessárias foram nas representações codificadas das letras, para realizar o processo de `shift`amento das letras mantendo a sua caixa, e na função de contagem de letras para o cálculo das frequências, que deve ser insensível à caixa.
 

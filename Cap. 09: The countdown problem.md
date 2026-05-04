@@ -1,4 +1,4 @@
-##### Exercício 1:
+# Exercício 1:
 
 A função `choices`, que retorna todos os arranjos possíveis de elementos de uma lista, pode ser descrita por uma _list comprehension_:
 
@@ -7,7 +7,7 @@ choices :: [a] -> [[a]]
 choices xs = [c | s <- subs xs, c <- perms s]
 ```
 
-##### Exercício 2:
+# Exercício 2:
 
 A função `isChoice`, que testa se uma lista pode ser configurada como um arranjo de elementos de outra, sem necessidade de gerar todos os arranjos possíveis, pode ser dada por:
 
@@ -24,7 +24,7 @@ isChoice (x:xs) ys =
   elem x ys && isChoice xs (remElem x ys)
 ```
 
-##### Exercício 3:
+# Exercício 3:
 
 A função `split`, que gera todas as bipartições não-vazias ordenadas de uma lista, foi desenvolvida com o intuito de gerar todas as subdivisões de uma dada escolha de inteiros para composição de expressões do tipo `App` na função `exprs`, que serão avaliadas e comparadas com o alvo em `solutions`. Nesse sentido, se `split` compreendesse listas vazias, tanto na partição esquerda quanto na direita, a função `exprs`, que é chamada recursivamente em cada partição, poderia ter como argumento uma lista vazia, que, por sua vez, retorna uma lista vazia.
 
@@ -32,7 +32,7 @@ No caso de a partição esquerda ser vazia, o gerador `l <- exprs ls` será aval
 
 Uma maneira de evitar o problema de recursão infinita é proibindo que a partição direita seja vazia. Mesmo assim, a bipartição com a lista esquerda vazia sabidamente nunca fornecerá uma expressão, fazendo com que sua inclusão só sobrecarregue desnecessariamente o programa.
 
-##### Exercício 4:
+# Exercício 4:
 
 Para encontrarmos o número total de expressões possíveis, válidas ou não, com valores escolhidos de uma certa lista de inteiros, podemos calcular o tamanho da seguinte lista obtida por _list comprehension_, cujo procedimento para obtenção foi encapsulado na função `generateAllExprs`:
 
@@ -52,13 +52,13 @@ generateValidExprs =
 
 Ao chamarmos `length (generateValidExprs [1,3,7,10,25,50])`, o número 4.672.540 é retornado. Veja como as expressões válidas, segundo as regras usuais do jogo, correspondem a pouco mais de 13,87% de todas as expressões possíveis com os inteiros daquela lista.
 
-##### Exercício 5:
+# Exercício 5:
 
 Se afrouxássemos um pouco as regras, permitindo que qualquer inteiro pudesse ser resultado intermediário ou final da expressão, certamente teríamos uma gama consideravelmente maior de possibilidades. Modificando a função `valid` na cláusula da operação de subtração, tornando-a sempre verdadeira, e adicionando a verificação de denominador não-nulo na cláusula da divisão, ao executarmos `length (generateValidExprs [1,3,7,10,25,50])` obtemos 10.839.369 expressões válidas no domínio dos inteiros. Isso representa quase 32,2% do total, e são aproximadamente 2,32 vezes mais expressões frente às com as restrições primordiais.
 
-##### Exercício 6:
+# Exercício 6:
 
-###### Letra a.
+## Letra a.
 
 A parte do programa que diz respeito à implementação das operações é na declaração do tipo enumerado `Op`, junto com as regras de avaliação e validez das operações em argumentos inteiros, na forma das funções `apply` e `valid`, respectivamente. A última peça dependente é a lista de operações disponíveis para combinação `ops`. Já que todo o restante do programa, especialmente os procedimentos de geração e avaliação de expressões, é interfaceado por esses três componentes (`apply`, `valid` e `ops`), nada mais deverá ser alterado.
 
@@ -91,7 +91,7 @@ valid :: Op -> Int -> Int -> Bool
 valid Exp m n = m /= 1 && n /= 1
 ```
 
-###### Letra b.
+## Letra b.
 
 A partir de `solutions'`, que produz as expressões que avaliam exatamente no valor de alvo, podemos fazer uma busca em largura no domínio dos alvos atrás de uma lista de resultados que não seja vazia. Isso resolveria o problema de encontrar as soluções mais próximas de um dado alvo.
 
@@ -122,7 +122,7 @@ Por exemplo, ao executarmos `nearestSolutions [1,3,7,10,25,50] 831` na versão p
 
 Vale notar que a função `solutionsInRange` testa todos os alvos no intervalo `[max (t-r) 1, t+r]`, o que inclui os valores intermediários. No entanto, pela característica da busca em largura feita por `nearestSolutions`, temos que não pode haver solução exata para eles, pois essa é a condição para a manutenção da iteração pelo espaço de busca. Logo, podemos realizar uma pequena otimização em `solutionsInRange` fazendo-a avaliar os resultados somente nos extremos do intervalo. Em termos de código, ela seria implementada simplesmente substituindo `ss = [lb..(t-r)]` por  `ss = [lb,t-r]`. Isso pouparia a repetição de `solutions'` em alvos já observados.
 
-###### Letra c.
+## Letra c.
 
 Podemos nos aproveitar do sistema de classes de tipos do Haskell para satisfazermos a tarefa de ordenar, por um critério de complexidade, as expressões retornadas pelas nossas funções. Caso estabeleçamos regras que tornem `Expr`essões dados `Eq`uiparáveis e `Ord`enáveis, teríamos ao nosso dispor todo o arcabouço de funcionalidades da linguagem para realizar as mais variadas comparações entre expressões e, principalmente, acesso à função `sort` do _Prelude_, que ordena uma lista com itens ordenáveis.
 

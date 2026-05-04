@@ -1,8 +1,8 @@
-###### Exercício 1:
+# Exercício 1:
 
 Apenas experimentar os exemplos no GHCi.
 
-###### Exercício 2:
+# Exercício 2:
 
 Explicitando os parênteses nas expressões:
 
@@ -12,7 +12,7 @@ Explicitando os parênteses nas expressões:
 > 2+3*4^5 -- 2+(3*(4^5))
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 O script em questão é:
 
@@ -38,7 +38,7 @@ n = a `div` length xs
 	  xs = [1,2,3,4,5]
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 A função `last`, da biblioteca `Prelude` padrão, retorna o último elemento de uma lista não-vazia. Poderíamos defini-la das seguintes maneiras:
 
@@ -55,7 +55,7 @@ last''' xs =
   drop (length xs - 1) xs !! 0
 ```
 
-###### Exercício 5:
+# Exercício 5:
 
 A função `init`, do `Prelude`, recebe uma lista não-vazia e retorna uma cópia sem o último elemento. Eis algumas formas de defini-la:
 

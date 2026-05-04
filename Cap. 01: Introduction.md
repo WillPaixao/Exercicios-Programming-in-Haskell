@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 Uma outra derivação possível de `double (double 2)` é:
 
@@ -12,7 +12,7 @@ Uma outra derivação possível de `double (double 2)` é:
   8
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 Assumindo a seguinte definição da função `sum`:
 
@@ -33,7 +33,7 @@ temos a seguinte sequência de passos ao avaliar `sum [x]`, com `x` sendo um nú
   x
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Definindo `product` de maneira similar a `sum`:
 
@@ -59,11 +59,11 @@ Verificando o resultado para a lista `[2,3,4]`:
   24
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 Bastaria trocar `smaller` e `larger` de posição no caso recursivo. Pensando em termos da abstração gerada pela definição indutiva, a lista ordenada resultante do caso recursivo consistiria na ordenação da lista com valores maiores que o pivô `x`, seguida do `x`, seguida da ordenação dos elementos menores ou iguais a `x`.
 
-###### Exercício 5:
+# Exercício 5:
 
 Na etapa de partição dos conjuntos de valores maiores e menores que o pivô, o que ocorreria é que valores iguais ao pivô não seriam incluídos na lista `smaller`, descartando-os. Dessa maneira, `qsort`, além de ordenar a lista crescentemente, eliminaria elementos repetidos.
 

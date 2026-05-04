@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 Decifrando os tipos das expressões:
 
@@ -10,7 +10,7 @@ Decifrando os tipos das expressões:
 > [tail, init, reverse] :: [[a] -> [a]]
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 Instanciando expressões que pertencem aos tipos correspondentes:
 
@@ -22,7 +22,7 @@ Instanciando expressões que pertencem aos tipos correspondentes:
 > apply f x = f x :: (a -> b) -> a -> b
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Enunciando os tipos das funções:
 
@@ -35,11 +35,11 @@ Enunciando os tipos das funções:
 > twice f x = f (f x) :: (a -> a) -> a -> a
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 As respostas para os exercícios anteriores foram verificadas no GHCi.
 
-###### Exercício 5:
+# Exercício 5:
 
 Em geral, não conseguimos equiparar funções porque isso demandaria a garantia de que:
 

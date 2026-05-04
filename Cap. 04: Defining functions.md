@@ -1,4 +1,4 @@
-###### Exercício 1:
+# Exercício 1:
 
 Escrevendo a função `halve`, que quebra uma lista de entrada em um par com suas duas metades:
 
@@ -10,7 +10,7 @@ halve xs =
     n = length xs `div` 2
 ```
 
-###### Exercício 2:
+# Exercício 2:
 
 Definindo a função `third`, que retorna o terceiro elemento de uma lista de tamanho mínimo 3, de três maneiras diferentes:
 
@@ -28,7 +28,7 @@ third''' :: [a] -> a
 third''' (_:(_:(x:_))) = x
 ```
 
-###### Exercício 3:
+# Exercício 3:
 
 Descrevendo `safetail`, que se comporta como `tail` para listas não-nulas e como a identidade para listas nulas, de três formas distintas:
 
@@ -52,7 +52,7 @@ safetail''' [] = []
 safetail''' xs = tail xs
 ```
 
-###### Exercício 4:
+# Exercício 4:
 
 Com _pattern matching_, a disjunção de dois valores booleanos pode ser definida de alguns jeitos:
 
@@ -78,7 +78,7 @@ b || b = b
 _ || _ = True
 ```
 
-###### Exercício 5:
+# Exercício 5:
 
 Usando apenas expressões condicionais, temos a seguinte descrição de `&&`:
 
@@ -93,7 +93,7 @@ a && b =
     False
 ```
 
-###### Exercício 6:
+# Exercício 6:
 
 Repetindo o estilo de descrição por condicionais, mas para a versão do `&&` determinada pelo primeiro operando:
 
@@ -105,7 +105,7 @@ a && b =
     False
 ```
 
-###### Exercício 7:
+# Exercício 7:
 
 Expressando `mult`, definido como
 
@@ -121,7 +121,7 @@ mult :: Int -> (Int -> (Int -> Int))
 mult = \x -> (\y -> (\z -> x*y*z))
 ```
 
-###### Exercício 8:
+# Exercício 8:
 
 Definindo as funções `luhnDouble` e `luhn`, que simulam a operação de verificação de dígitos de um cartão de crédito:
 
