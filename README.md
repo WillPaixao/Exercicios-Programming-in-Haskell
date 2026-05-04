@@ -1,7 +1,5 @@
 # Exercícios - Programming in Haskell
 
----
-
 Este repositório contém uma coletânea de resoluções de exercícios propostos na 2ª edição do livro
 [**Programming in Haskell**](https://people.cs.nott.ac.uk/pszgmh/pih.html), do autor **Graham Hutton**, feitas nos meus estudos para a disciplina
 eletiva de Programação Funcional no Bacharelado em Ciência da Computação na UFRJ.
