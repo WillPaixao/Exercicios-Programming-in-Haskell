@@ -30,7 +30,7 @@ occurs x (Node l y r) =
 
 Para detectar o balanceamento de árvores cujos valores atômicos encontram-se apenas em suas folhas, é de grande valia a definição de uma função auxiliar que calcula o número de folhas em uma árvore desse tipo:
 
-```
+```haskell
 countLeaves :: Tree a -> Int
 countLeaves (Leaf _)   = 1
 countLeaves (Node l r) = countLeaves l + countLeaves r
